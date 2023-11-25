@@ -5,9 +5,12 @@ def largest_number_naive(numbers):
     numbers = list(map(str, numbers))
 
     largest = 0
+    numbers.sort()
+    rev = numbers[::-1]
+    for i in range(len(numbers)):
+        largest += numbers[i]
 
-    for permutation in permutations(numbers):
-        largest = max(largest, int("".join(permutation)))
+
 
     return largest
 
