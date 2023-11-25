@@ -18,6 +18,16 @@ int fibonacci_sum_squares_naive(long long n) {
     return sum % 10;
 }
 
+int fibonacci_fast(int n) {
+    int F[n+1];
+    F[0]=0;
+    F[1]=1;
+    for(int i=2;i<=n;i++){
+        F[i]=F[i-1]+F[i-2];
+    }
+    return (F[n]*F[n+1])%10;
+}
+
 int main() {
     long long n = 0;
     std::cin >> n;

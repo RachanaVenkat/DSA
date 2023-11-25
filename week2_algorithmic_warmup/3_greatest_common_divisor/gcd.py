@@ -7,7 +7,12 @@ def gcd(a, b):
 
     return current_gcd
 
+def gcd_fast(a,b):
+    if b==0:
+      return a
+    c=a%b
+    return gcd_fast(b,c)
 
 if __name__ == "__main__":
     a, b = map(int, input().split())
-    print(gcd(a, b))
+    print(gcd_fast(a, b))

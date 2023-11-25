@@ -5,8 +5,16 @@ def lcm(a, b):
 
     assert False
 
+def gcd_fast(a,b):
+    if b==0:
+      return a
+    c=a%b
+    return gcd_fast(b,c)
+def lcm_fast(a,b):
+    return int((a*b)/gcd_fast(a,b))
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     a, b = map(int, input().split())
-    print(lcm(a, b))
+    print(lcm_fast(a, b))
 
