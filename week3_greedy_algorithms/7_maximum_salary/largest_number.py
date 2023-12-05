@@ -14,8 +14,22 @@ def largest_number_naive(numbers):
 
     return largest
 
+def max_sal(numbers):
+    numbers = list(map(str,numbers))
+    largest=''
+    # largest1 = ''
+    # for i in range(len(numbers)):
+    #     largest1 += numbers[i]
+    # largest1=[*largest1]
+    for i in range(len(numbers)):
+        m=max(numbers)
+        largest += m
+        numbers.remove(m)
+        
+        
+    return int(largest)
 
 if __name__ == '__main__':
     _ = int(input())
     input_numbers = input().split()
-    print(largest_number_naive(input_numbers))
+    print(max_sal(input_numbers))
